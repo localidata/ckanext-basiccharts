@@ -12,7 +12,11 @@ ckan.module("basiccharts_view", function (jQuery) {
   }
 
   function setupFilters(defaultFilters) {
-    var routeFilters = ckan.views.filters.get();
+	var routeFilters;
+	if (ckan.views.filters!=null)
+    {
+		routeFilters = ckan.views.filters.get();
+	}
 
     return $.extend({}, defaultFilters, routeFilters);
   }
@@ -23,7 +27,7 @@ ckan.module("basiccharts_view", function (jQuery) {
         chartType = self.options.chartType,
         resourceView = self.options.resourceView,
         params = setupParams(resourceView, chartType),
-        elementId = "#"+self.el.context.id,
+        elementId = "#"+this.el[0].id,
         resource = {
           id: self.options.resourceId,
           endpoint: endpoint

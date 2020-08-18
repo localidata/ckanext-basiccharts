@@ -1,5 +1,6 @@
 .basicChart {
   height: 500px;
+  background-color: #fff;
 }
 
 .basicChart .error {
@@ -25,4 +26,6 @@
   height: 100%;
   width: 100%;
 }
+
+
 
